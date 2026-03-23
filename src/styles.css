@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply antialiased text-gray-900 bg-gray-50 transition-colors duration-300;
+  }
+  
+  /* Dark mode global overrides */
+  :root[class~="dark"] body {
+    @apply bg-darkLayout text-gray-100;
+  }
+}
+
+/* Custom Utilities for glassmorphism */
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  .glass-dark {
+    @apply bg-darkCard/80 backdrop-blur-md border border-white/5 shadow-lg;
+  }
+}
