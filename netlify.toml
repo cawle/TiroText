@@ -1,0 +1,8 @@
+[build]
+  command = "mkdir -p src/environments && echo \"export const environment = { production: true, supabaseUrl: '${supabase_Url}', supabaseKey: '${supabase_Key}' };\" > src/environments/environment.ts && npm run build"
+  publish = "dist/tiro-text/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
