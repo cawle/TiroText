@@ -175,12 +175,12 @@ Chart.register(...registerables);
                    <div class="flex flex-col gap-1.5 overflow-hidden">
                      <span class="font-medium text-gray-800 dark:text-gray-200 truncate w-full pr-4 text-sm">{{ h.text.substring(0, 45) }}{{ h.text.length > 45 ? '...' : '' }}</span>
                      <span class="text-[11px] font-semibold tracking-wider text-gray-400 uppercase flex items-center gap-1">
-                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        {{ getTimeAgo(h.created_at) }}
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        {{ h.created_at | date:'MMM d, yyyy - h:mm a' }}
                      </span>
                    </div>
                    <div class="flex flex-col items-end gap-1.5 shrink-0">
-                     <span class="text-xs font-bold bg-white dark:bg-darkCard px-2.5 py-1 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors duration-300">{{ h.word_count }} W</span>
+                     <span class="text-xs font-bold bg-white dark:bg-darkCard px-2.5 py-1 rounded-md border border-gray-200 dark:border-gray-700 shadow-sm text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors duration-300">{{ h.word_count }} Words</span>
                      <button (click)="deleteHistory($event, h.id)" class="text-gray-400 hover:text-red-500 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 p-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300" title="Delete Snapshot">
                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                      </button>
