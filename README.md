@@ -30,7 +30,6 @@
    npm install
    ```
 
-   ```
 3. **Run Development Server:**
    ```bash
    npm run dev
